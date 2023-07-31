@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function BotCollection({botsArray, setBotsArray, favouriteBots, setFavouriteBots}) {
+  const navigate=useNavigate()
 
   function addToFavourites(event){
     const botId = parseInt(event.target.id);
@@ -8,6 +10,9 @@ function BotCollection({botsArray, setBotsArray, favouriteBots, setFavouriteBots
     const isBotAlreadyAdded = favouriteBots.some((bot) => bot.id === botId);
     !isBotAlreadyAdded?
     setFavouriteBots([...favouriteBots, draftedBot]):console.log('Already in favourites');
+  }
+  function navigateToHome(id){
+      navigate(`/details/${id}`)
   }
   function deleteBot(botToDelete){
     const deleteArray=botsArray.filter((bot)=>botToDelete.id!==bot.id)
@@ -32,19 +37,24 @@ function BotCollection({botsArray, setBotsArray, favouriteBots, setFavouriteBots
         <div className="card-body" >
             <h3 className="card-title">{bot.name}</h3>
             <p className="card-text">{bot.catchphrase}</p>
-            <h4>{bot.health} {bot.armor} {bot.damage}</h4>
+            <h4>&#128147;{bot.health} &#128737;{bot.armor} &#9889;{bot.damage}</h4>
             <button 
             onClick={addToFavourites}
+            className="btn btn-info"
+            id={bot.id}
+            >Favourites
+            </button>
+            <button 
+            onClick={() => navigateToHome(bot.id)}
             className="btn btn-primary"
             id={bot.id}
-            >Add to Favourites
+            >Details
             </button>
-            <br/>
             <button 
             onClick={()=>deleteBot(bot)}
             className="btn btn-danger"
             id={bot.id}
-            >X ! ! !
+            > X 
           </button>
         </div>
     </div>

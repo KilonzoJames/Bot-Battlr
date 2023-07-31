@@ -29,18 +29,17 @@ function YourBotArmy({favouriteBots, setFavouriteBots}) {
       <div className="card-body" >
         <h3 className="card-title">{fav.name}</h3>
         <p className="card-text">{fav.catchphrase}</p>
-        <h4>{fav.health} {fav.armor} {fav.damage}</h4>
+        <h4>&#128147;{fav.health} &#128737;{fav.armor} &#9889;{fav.damage}</h4>
         <button 
         onClick={dischargeBot}
         className="btn btn-success"
         id={fav.id}
         >Remove from Favourites
         </button>
-        <br/>
         <button 
         onClick={()=>deleteBot(fav)}
         className="btn btn-danger"
-        >X ! ! !
+        > X 
         </button>
       </div>
   </div>
