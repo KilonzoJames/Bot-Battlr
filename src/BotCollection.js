@@ -32,7 +32,7 @@ function BotCollection({botsArray, setBotsArray, favouriteBots, setFavouriteBots
     }
 
   const botCards=botsArray.map((bot)=>(
-    <div className='card col-2 bg-secondary' key={bot.id}>
+    <div className='card col-3 bg-secondary' id="card-bot" key={bot.id}>
       <img src={bot.avatar_url} className="card-img-top" alt="Loading..."/>
         <div className="card-body" >
             <h3 className="card-title">{bot.name}</h3>
@@ -42,7 +42,7 @@ function BotCollection({botsArray, setBotsArray, favouriteBots, setFavouriteBots
             onClick={addToFavourites}
             className="btn btn-info"
             id={bot.id}
-            >Favourites
+            > Enlist  
             </button>
             <button 
             onClick={() => navigateToHome(bot.id)}

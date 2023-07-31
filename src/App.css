@@ -3,3 +3,7 @@
 button.clicked {
     background-color: blue; 
   }
+#card-bot:hover{
+  transform: scale(1.08);
+  cursor: pointer;
+}

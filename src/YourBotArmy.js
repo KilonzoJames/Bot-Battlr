@@ -24,7 +24,7 @@ function YourBotArmy({favouriteBots, setFavouriteBots}) {
 
   const favouriteList=favouriteBots.map((fav) => 
   (
-    <div className="card col-2" key={fav.id}   >
+    <div className="card col-3 bg-info" key={fav.id}   >
       <img src={fav.avatar_url} className="card-img-top" alt="Loading..."/>
       <div className="card-body" >
         <h3 className="card-title">{fav.name}</h3>
@@ -34,7 +34,7 @@ function YourBotArmy({favouriteBots, setFavouriteBots}) {
         onClick={dischargeBot}
         className="btn btn-success"
         id={fav.id}
-        >Remove from Favourites
+        >Demote 
         </button>
         <button 
         onClick={()=>deleteBot(fav)}
